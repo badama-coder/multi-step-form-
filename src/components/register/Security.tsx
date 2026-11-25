@@ -1,6 +1,6 @@
-import {Field, FieldLabel, FieldError, FieldGroup, } from "@/components/ui/field";
+import {Field, FieldLabel, FieldError, FieldGroup, } from "@/src/components/ui/field";
 import { Input } from "../ui/input";
-import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardDescription, CardHeader, CardTitle } from "@/src/components/ui/card";
 import { Button } from "../ui/button";
 
 export const Security = () => {

@@ -1,0 +1,23 @@
+import { StepIndicator } from "./StepIndicator";
+import { StepLine } from "./StepLine";
+import { STEPS } from "@/src/constants/steps";
+
+type StepperProps = {
+    step : number;
+}
+
+export const Stepper = ({step}: StepperProps) => {
+  return (
+    <div className="relative">
+      <div className="absolute flex w-full h-0.5 bg-[#34253F]">
+        <StepLine filled={step >1}/>
+        <StepLine filled={step >2}/>
+      </div>
+      <div className="flex justify-between">
+        {STEPS.map(({Icon, label}, index )=> (
+          <StepIndicator key={index} Icon={Icon} label={label} />
+          ))}
+      </div>
+    </div>
+  )
+}
