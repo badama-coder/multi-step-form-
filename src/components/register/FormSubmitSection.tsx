@@ -1,18 +1,19 @@
-import React from 'react'
+
 import { Field } from '../ui/field'
 import { Button } from '../ui/button'
 
 type FormSubmitSectionProps = {
-    step: number;
+  step: FormStep | 3 ;
+  onBack: ()=> void;
 }
 
-export const FormSubmitSection = () => {
+export const FormSubmitSection = ({step, onBack}: FormSubmitSectionProps) => {
   return (
     <div>
-        <Field>
-                <Button> Continue   →</Button>
-                <div className="text-[10px] flex justify-center ">Progress is saved when you click Continue.</div>
-            </Field>
+      {step > 0 && <Button onClick={onBack} type='button'>Back</Button>}
+      <Button type='submit'> Continue   →</Button>
+      <div className="text-[10px] flex justify-center ">Progress is saved when you click Continue.</div>
+        
     </div>
   )
 }
